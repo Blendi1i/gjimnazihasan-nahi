@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gjimnazi "Hasan Nahi" | Kontakti</title>
+    <meta name="description" content="Na kontaktoni për regjistrime, informata apo vizita në Gjimnazin Hasan Nahi.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+            gap: 60px;
+            margin-top: 50px;
+        }
+        .contact-info-boxes {
+            display: grid;
+            gap: 20px;
+        }
+        .info-box {
+            background: var(--white);
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            border-left: 5px solid var(--primary);
+        }
+        .info-box i {
+            font-size: 1.5rem;
+            color: var(--primary);
+            background: rgba(0, 74, 173, 0.1);
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 10px;
+        }
+        .info-box h4 {
+            margin-bottom: 5px;
+            color: var(--primary-dark);
+        }
+        .contact-form {
+            background: var(--white);
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.1);
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: var(--primary-dark);
+        }
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-family: inherit;
+            transition: 0.3s;
+        }
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(0, 74, 173, 0.1);
+        }
+        .map-section {
+            margin-top: 80px;
+            height: 450px;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+        .map-section iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+    </style>
+    <!-- Favicon -->
+    <link rel="icon" href="https://gjimnazi-hasannahi.com/wp-content/uploads/2024/03/cropped-0.-logo-32x32.png" sizes="32x32">
+    <link rel="icon" href="https://gjimnazi-hasannahi.com/wp-content/uploads/2024/03/cropped-0.-logo-192x192.png" sizes="192x192">
+    <link rel="apple-touch-icon" href="https://gjimnazi-hasannahi.com/wp-content/uploads/2024/03/cropped-0.-logo-180x180.png">
+</head>
+<body>
+
+    <!-- Preloader -->
+    <div id="preloader">
+        <img src="https://gjimnazi-hasannahi.com/wp-content/uploads/2024/03/cropped-0.-logo-300x300.png" alt="Logo" class="loader-logo">
+        <div class="loader-text">
+            <span class="hasan">HASAN</span>
+            <span class="nahi">NAHI</span>
+        </div>
+        <div class="loader-spinner"></div>
+    </div>
+
+    <!-- Header / Top Bar -->
+    <header class="top-bar">
+        <div class="container bar-wrap">
+            <div class="info">
+                <span><i class="fas fa-envelope"></i> gjimnazihasannahi@gmail.com</span>
+                <span><i class="fas fa-phone"></i> +383 48 177 770</span>
+                <span class="d-none d-md-inline"><i class="fas fa-clock"></i> E Hënë - E Premte: 08:00 - 16:00</span>
+            </div>
+            <div class="social">
+                <a href="https://www.facebook.com/HasanNahiOfficial/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.instagram.com/gjimnazihasannahi/" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.linkedin.com/school/hasannahi/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://www.youtube.com/@hasannahihighschool1784" target="_blank"><i class="fab fa-youtube"></i></a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="main-nav">
+        <div class="container nav-wrap">
+            <a href="index.html" class="logo">
+                <img src="https://gjimnazi-hasannahi.com/wp-content/uploads/2024/03/cropped-0.-logo-300x300.png" alt="Gjimnazi Hasan Nahi Logo">
+                <div class="logo-text">
+                    <span class="name">HASAN NAHI</span>
+                    <span class="sub">AKADEMIA E SHKELQËSISË</span>
+                </div>
+            </a>
+            <div class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">Rreth Nesh</a></li>
+                <li><a href="courses.html">Programet</a></li>
+                <li><a href="achievements.html">Arritjet</a></li>
+                <li><a href="revista.html">Revista</a></li>
+                <li><a href="eureka.html">Eureka</a></li>
+                <li class="nav-item-dropdown">
+                    <a href="education.html">Character Education <i class="fas fa-chevron-down"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="education.html#program">Programi</a></li>
+                        <li><a href="education.html#themes">Temat e Muajve</a></li>
+                        <li><a href="education.html#points">Sistemi i Pikëve</a></li>
+                        <li><a href="education.html#certs">Sistemi i Certifikatave</a></li>
+                    </ul>
+                </li>
+                <li><a href="contact.html" class="active">Kontakti</a></li>
+            </ul>
+            <a href="contact.html" class="btn-enroll">Apliko Tani</a>
+        </div>
+    </nav>
+
+    <div class="page-wrapper">
+        <div class="blob-1"></div>
+        <div class="blob-2"></div>
+
+        <!-- Modernized Banner -->
+        <section class="hero-modern" style="background-image: url('https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');">
+            <div class="hero-overlay"></div>
+            <div class="container">
+                <div class="hero-modern-content">
+                    <span class="hero-tag">Na Kontaktoni</span>
+                    <h1>Eja dhe Vizitona</h1>
+                    <p>Jemi këtu për t'ju përgjigjur çdo pyetjeje rreth shkollës sonë.</p>
+                    <div class="hero-accent-line"></div>
+                </div>
+            </div>
+            <div class="wave-divider">
+                <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
+                    <path d="M1200 120L0 120L0 0Z" class="shape-fill"></path>
+                </svg>
+            </div>
+        </section>
+
+        <!-- Elevated Contact Content -->
+        <section class="contact container" style="padding-bottom: 150px;">
+            <div class="elevated-form-wrapper reveal">
+                <div class="section-title">
+                    <h2 class="gradient-text">Filloni Rrugëtimin Tuaj Me Ne</h2>
+                    <p>Vizitoni ambientet tona ose na shkruani direkt përmes formës më poshtë.</p>
+                </div>
+
+                <div class="contact-grid" style="margin-top: 50px;">
+                    <div class="contact-info-boxes">
+                        <div class="info-box" style="border-left: none; border-bottom: 4px solid var(--primary); box-shadow: 0 10px 20px rgba(0,0,0,0.03);">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <h4>Lokacioni ynë</h4>
+                                <p>Banullë, Lipjan, 14000, Kosovë</p>
+                            </div>
+                        </div>
+                        <div class="info-box" style="border-left: none; border-bottom: 4px solid var(--accent); box-shadow: 0 10px 20px rgba(0,0,0,0.03);">
+                            <i class="fas fa-phone-alt" style="color: var(--accent); background: rgba(255,215,0,0.1);"></i>
+                            <div>
+                                <h4>Telefoni</h4>
+                                <p>+383 48 177 770</p>
+                            </div>
+                        </div>
+                        <div class="info-box" style="border-left: none; border-bottom: 4px solid var(--primary); box-shadow: 0 10px 20px rgba(0,0,0,0.03);">
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <h4>E-mail</h4>
+                                <p>gjimnazihasannahi@gmail.com</p>
+                            </div>
+                        </div>
+                        <div class="info-box" style="border-left: none; border-bottom: 4px solid var(--accent); box-shadow: 0 10px 20px rgba(0,0,0,0.03);">
+                            <i class="fas fa-clock" style="color: var(--accent); background: rgba(255,215,0,0.1);"></i>
+                            <div>
+                                <h4>Orari i Punës</h4>
+                                <p>E Hënë - E Premte: 08:00 - 16:00<br>E Shtunë: 09:00 - 12:00</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="contact-form-wrap">
+                        <form class="contact-form" style="box-shadow: none; border: 1px solid #eee;">
+                            <div class="form-group">
+                                <label>Emri dhe Mbiemri</label>
+                                <input type="text" class="form-control" placeholder="Shkruani emrin tuaj...">
+                            </div>
+                            <div class="form-group">
+                                <label>E-mail Adresa</label>
+                                <input type="email" class="form-control" placeholder="adresa@email.com">
+                            </div>
+                            <div class="form-group">
+                                <label>Subjekti</label>
+                                <input type="text" class="form-control" placeholder="Për çfarë na kontaktoni?">
+                            </div>
+                            <div class="form-group">
+                                <label>Mesazhi Juaj</label>
+                                <textarea class="form-control" rows="5" placeholder="Shkruani mesazhin këtu..."></textarea>
+                            </div>
+                            <button type="submit" class="btn-primary" style="width: 100%; border: none; cursor: pointer; font-size: 1.1rem; padding: 15px;">Dërgo Mesazhin <i class="fas fa-paper-plane" style="margin-left: 10px;"></i></button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Google Map Iframe -->
+            <div class="map-section reveal" style="margin-top: 50px;">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2938.9664534125345!2d21.134704376517!3d42.508544471172!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x13549fb208b00001%3A0xe378544471172!2sHasan%20Nahi%20High%20School!5e0!3m2!1sen!2s!4v1700000000000!5m2!1sen!2s" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+        </section>
+    </div>
+
+     <!-- Footer -->
+     <footer>
+        <div class="container footer-grid">
+            <div class="footer-about">
+                <a href="#" class="footer-logo">
+                    <img src="https://gjimnazi-hasannahi.com/wp-content/uploads/2024/03/cropped-0.-logo-300x300.png" alt="Logo">
+                    <span class="name">HASAN NAHI</span>
+                </a>
+                <p>Edukojmë liderët e së ardhmes me përkushtim dhe profesionalizëm. Gjimnazi Hasan Nahi është shtëpia e dijes tuaj.</p>
+                <div class="social" style="margin-top: 20px;">
+                    <a href="https://www.facebook.com/HasanNahiOfficial/" target="_blank"
+                        style="background: rgba(255,255,255,0.1); width: 40px; height: 40px; display: inline-flex; align-items: center; justify-content: center; border-radius: 50%;"><i
+                            class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/gjimnazihasannahi/" target="_blank"
+                        style="background: rgba(255,255,255,0.1); width: 40px; height: 40px; display: inline-flex; align-items: center; justify-content: center; border-radius: 50%; margin-left: 10px;"><i
+                            class="fab fa-instagram"></i></a>
+                    <a href="https://www.youtube.com/@hasannahihighschool1784" target="_blank"
+                        style="background: rgba(255,255,255,0.1); width: 40px; height: 40px; display: inline-flex; align-items: center; justify-content: center; border-radius: 50%; margin-left: 10px;"><i
+                            class="fab fa-youtube"></i></a>
+                    <a href="https://www.tiktok.com/@hasan.nahi.high.s" target="_blank"
+                        style="background: rgba(255,255,255,0.1); width: 40px; height: 40px; display: inline-flex; align-items: center; justify-content: center; border-radius: 50%; margin-left: 10px;"><i
+                            class="fab fa-tiktok"></i></a>
+                </div>
+            </div>
+            <div class="footer-nav">
+                <h3 class="footer-title">Lidhje të Shpejta</h3>
+                <ul class="footer-links">
+                    <li><a href="index.html">Ballina</a></li>
+                    <li><a href="about.html">Rreth Nesh</a></li>
+                    <li><a href="courses.html">Programet</a></li>
+                    <li><a href="achievements.html">Arritjet</a></li>
+                    <li><a href="revista.html">Revista HANA</a></li>
+                    <li><a href="eureka.html">Eureka 2025</a></li>
+                    <li><a href="education.html">Character Education</a></li>
+                    <li><a href="contact.html">Kontakti</a></li>
+                </ul>
+            </div>
+            <div class="footer-nav">
+                <h3 class="footer-title">Programet tona</h3>
+                <ul class="footer-links">
+                    <li><a href="#">Shkencat Natyrore</a></li>
+                    <li><a href="#">Shkencat Shoqërore</a></li>
+                    <li><a href="#">IT dhe Robotikë</a></li>
+                    <li><a href="#">Garat Shkencore</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h3 class="footer-title">Na Kontaktoni</h3>
+                <p><i class="fas fa-map-marker-alt"></i> Banullë, Lipjan, 14000, Kosovë</p>
+                <p><i class="fas fa-phone"></i> +383 48 177 770</p>
+                <p><i class="fas fa-envelope"></i> gjimnazihasannahi@gmail.com</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Gjimnazi "Hasan Nahi". Të gjitha të drejtat të rezervuara.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://unpkg.com/lenis@1.0.45/dist/lenis.min.js"></script>
+    <script src="js/main.js"></script>
+
+</body>
+</html>

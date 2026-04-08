@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gjimnazi "Hasan Nahi" | Edukimi i Karakterit</title>
+    <meta name="description"
+        content="Programi i Edukimit të Karakterit - Formimi i vlerave morale, integritetit dhe udhëheqësisë tek nxënësit tanë.">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Outfit:wght@400;600;800&display=swap"
+        rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        .edu-hero {
+            background: linear-gradient(135deg, #002d6a 0%, #004aad 100%);
+            padding: 80px 0 120px;
+            color: white;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .edu-hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            font-family: 'Outfit', sans-serif;
+        }
+
+        .edu-hero p {
+            font-size: 1.25rem;
+            max-width: 800px;
+            margin: 0 auto;
+            opacity: 0.9;
+        }
+
+        .edu-tabs-container {
+            margin-top: -60px;
+            position: relative;
+            z-index: 10;
+        }
+
+        .tab-nav-edu {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+
+        .tab-btn-edu {
+            padding: 15px 30px;
+            border-radius: 50px;
+            border: none;
+            background: white;
+            color: var(--primary-dark);
+            font-weight: 700;
+            cursor: pointer;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+            transition: 0.3s;
+            font-size: 1rem;
+        }
+
+        .tab-btn-edu.active {
+            background: var(--accent);
+            color: var(--primary-dark);
+            transform: translateY(-5px);
+        }
+
+        .tab-content-edu {
+            display: none;
+            background: white;
+            padding: 60px;
+            border-radius: 30px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.08);
+            animation: fadeInEdu 0.5s ease;
+        }
+
+        .tab-content-edu.active {
+            display: block;
+        }
+
+        @keyframes fadeInEdu {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Monthly Themes Style */
+        .themes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .theme-card {
+            padding: 30px;
+            border-radius: 20px;
+            background: #f8faff;
+            border-left: 5px solid var(--primary);
+            transition: 0.3s;
+        }
+
+        .theme-card:hover {
+            transform: scale(1.03);
+            background: white;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        }
+
+        .theme-month {
+            font-weight: 800;
+            color: var(--primary);
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .theme-title {
+            font-size: 1.5rem;
+            color: var(--primary-dark);
+            margin-bottom: 15px;
+        }
+
+        /* Certificate Levels */
+        .cert-tiers {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 40px;
+        }
+
+        .cert-card {
+            text-align: center;
+            padding: 30px;
+            border-radius: 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cert-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        .bronze {
+            background: #fff5eb;
+            border: 1px solid #e28743;
+        }
+
+        .silver {
+            background: #f2f2f2;
+            border: 1px solid #a6a6a6;
+        }
+
+        .gold {
+            background: #fffdf0;
+            border: 1px solid #ffd700;
+        }
+
+        .diamond {
+            background: #f0faff;
+            border: 1px solid #70d1ff;
+        }
+
+        @media (max-width: 768px) {
+            .tab-content-edu {
+                padding: 30px;
+            }
+
+            .edu-hero h1 {
+                font-size: 2.2rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Preloader -->
+    <div id="preloader">
+        <img src="https://gjimnazi-hasannahi.com/wp-content/uploads/2024/03/cropped-0.-logo-300x300.png" alt="Logo"
+            class="loader-logo">
+        <div class="loader-text">
+            <span class="hasan">HASAN</span>
+            <span class="nahi">NAHI</span>
+        </div>
+        <div class="loader-spinner"></div>
+    </div>
+
+    <!-- Header / Top Bar -->
+    <header class="top-bar">
+        <div class="container bar-wrap">
+            <div class="info">
+                <span><i class="fas fa-envelope"></i> gjimnazihasannahi@gmail.com</span>
+                <span><i class="fas fa-phone"></i> +383 48 177 770</span>
+                <span class="d-none d-md-inline"><i class="fas fa-clock"></i> E Hënë - E Premte: 08:00 - 16:00</span>
+            </div>
+            <div class="social">
+                <a href="https://www.facebook.com/HasanNahiOfficial/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.instagram.com/gjimnazihasannahi/" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.linkedin.com/school/hasannahi/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://www.youtube.com/@hasannahihighschool1784" target="_blank"><i class="fab fa-youtube"></i></a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="main-nav">
+        <div class="container nav-wrap">
+            <a href="index.html" class="logo">
+                <img src="https://gjimnazi-hasannahi.com/wp-content/uploads/2024/03/cropped-0.-logo-300x300.png"
+                    alt="Gjimnazi Hasan Nahi Logo">
+                <div class="logo-text">
+                    <span class="name">HASAN NAHI</span>
+                    <span class="sub">AKADEMIA E SHKËLQËSISË</span>
+                </div>
+            </a>
+            <div class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">Rreth Nesh</a></li>
+                <li><a href="courses.html">Programet</a></li>
+                <li><a href="achievements.html">Arritjet</a></li>
+                <li><a href="revista.html">Revista</a></li>
+                <li><a href="eureka.html">Eureka</a></li>
+                <li class="nav-item-dropdown">
+                    <a href="education.html" class="active">Character Education <i class="fas fa-chevron-down"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="education.html#program">Programi</a></li>
+                        <li><a href="education.html#themes">Temat e Muajve</a></li>
+                        <li><a href="education.html#points">Sistemi i Pikëve</a></li>
+                        <li><a href="education.html#certs">Sistemi i Certifikatave</a></li>
+                    </ul>
+                </li>
+                <li><a href="contact.html">Kontakti</a></li>
+            </ul>
+            <a href="contact.html" class="btn-enroll">Apliko Tani</a>
+        </div>
+    </nav>
+
+    <div class="page-wrapper">
+        <!-- Hero -->
+        <section class="edu-hero">
+            <div class="container reveal">
+                <span class="tag"
+                    style="background: rgba(255,215,0,0.2); color: var(--accent); margin-bottom: 25px;">Udhëheqja &
+                    Integriteti</span>
+                <h1 style="color: #ffffff;">Character Education</h1>
+                <p>Misioni ynë nuk është vetëm suksesi akademik, por formimi i personalitetit të nxënësit përmes vlerave
+                    njerëzore dhe qytetare.</p>
+            </div>
+        </section>
+
+        <!-- Tabs Content -->
+        <section class="edu-tabs-container container">
+            <div class="tab-nav-edu reveal">
+                <button class="tab-btn-edu active" data-tab="program">Programi</button>
+                <button class="tab-btn-edu" data-tab="themes">Temat e Muajve</button>
+                <button class="tab-btn-edu" data-tab="points">Sistemi i Pikëve</button>
+                <button class="tab-btn-edu" data-tab="certs">Certifikatat</button>
+            </div>
+
+            <!-- 1. Programi -->
+            <div id="program" class="tab-content-edu active reveal">
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center;">
+                    <div>
+                        <h2 style="font-size: 2.2rem; color: var(--primary-dark); margin-bottom: 25px;">Qëllimi i
+                            Programit</h2>
+                        <p style="font-size: 1.1rem; line-height: 1.8; margin-bottom: 20px;">
+                            Programi i Edukimit të Karakterit synon të integrojë vlerat etike në jetën e përditshme
+                            shkollore.
+                            Ne besojmë se një nxënës i suksesshëm është ai që kombinon diturinë me përgjegjësinë,
+                            integritetin dhe empatinë.
+                        </p>
+                        <ul style="list-style: none; padding: 0;">
+                            <li style="margin-bottom: 12px; display: flex; gap: 10px;">
+                                <i class="fas fa-check-circle" style="color: #60c377;"></i>
+                                <span>Zhvillimi i integritetit moral dhe zbatimi i tij në jetë.</span>
+                            </li>
+                            <li style="margin-bottom: 12px; display: flex; gap: 10px;">
+                                <i class="fas fa-check-circle" style="color: #60c377;"></i>
+                                <span>Përgjegjësia personale ndaj detyrave dhe komunitetit.</span>
+                            </li>
+                            <li style="margin-bottom: 12px; display: flex; gap: 10px;">
+                                <i class="fas fa-check-circle" style="color: #60c377;"></i>
+                                <span>Udhëheqësia përmes bashkëpunimit dhe shërbimit.</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                            alt="Student Success"
+                            style="width: 100%; border-radius: 20px; box-shadow: 0 15px 40px rgba(0,0,0,0.1);">
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2. Temat -->
+            <div id="themes" class="tab-content-edu">
+                <div class="section-title" style="text-align: center; margin-bottom: 50px;">
+                    <h2>Kalendari i Temave Mujore</h2>
+                    <p>Programi ynë i edukimit shtrihet gjatë të gjithë vitit akademik me tema specifike për secilën grupmoshë.</p>
+                </div>
+                
+                <div style="overflow-x: auto; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); border: 1px solid #eee;">
+                    <table style="width: 100%; border-collapse: collapse; background: white; text-align: left;">
+                        <thead>
+                            <tr style="background: var(--primary); color: white;">
+                                <th style="padding: 20px; border-bottom: 2px solid rgba(255,255,255,0.1);">Muajt - Months</th>
+                                <th style="padding: 20px; border-bottom: 2px solid rgba(255,255,255,0.1);">Klasat 0 - 5</th>
+                                <th style="padding: 20px; border-bottom: 2px solid rgba(255,255,255,0.1);">Klasat 6 - 9</th>
+                                <th style="padding: 20px; border-bottom: 2px solid rgba(255,255,255,0.1);">Klasat 10 - 12</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr style="border-bottom: 1px solid #eee;">
+                                <td style="padding: 15px 20px; font-weight: 700; color: var(--primary-dark);">Shtator</td>
+                                <td style="padding: 15px 20px;">Respect - Respekti</td>
+                                <td style="padding: 15px 20px;">Integrity - Integriteti</td>
+                                <td style="padding: 15px 20px;">All About Me - Gjithçka rreth meje</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid #eee; background: #fbfcfe;">
+                                <td style="padding: 15px 20px; font-weight: 700; color: var(--primary-dark);">Tetor</td>
+                                <td style="padding: 15px 20px;">Responsibility - Përgjegjësia</td>
+                                <td style="padding: 15px 20px;">Perseverance - Këmbëngulja</td>
+                                <td style="padding: 15px 20px;">Leadership - Udhëheqësia</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid #eee;">
+                                <td style="padding: 15px 20px; font-weight: 700; color: var(--primary-dark);">Nëntor</td>
+                                <td style="padding: 15px 20px;">Kindness - Mirësia</td>
+                                <td style="padding: 15px 20px;">Courage - Kurajo</td>
+                                <td style="padding: 15px 20px;">Ethical Decision - Vendimmarrja Etike</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid #eee; background: #fbfcfe;">
+                                <td style="padding: 15px 20px; font-weight: 700; color: var(--primary-dark);">Dhjetor</td>
+                                <td style="padding: 15px 20px;">Honesty - Ndershmëria</td>
+                                <td style="padding: 15px 20px;">Compassion - Dhembshuria</td>
+                                <td style="padding: 15px 20px;">Goal Setting - Vendosja e Qëllimeve</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid #eee;">
+                                <td style="padding: 15px 20px; font-weight: 700; color: var(--primary-dark);">Janar</td>
+                                <td style="padding: 15px 20px;">Fairness - Drejtësia</td>
+                                <td style="padding: 15px 20px;">Resilience - Qëndrueshmëria</td>
+                                <td style="padding: 15px 20px;">Time Management - Menaxhimi i Kohës</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid #eee; background: #fbfcfe;">
+                                <td style="padding: 15px 20px; font-weight: 700; color: var(--primary-dark);">Shkurt</td>
+                                <td style="padding: 15px 20px;">Self-Discipline - Vetëdisplina</td>
+                                <td style="padding: 15px 20px;">Tolerance - Toleranca</td>
+                                <td style="padding: 15px 20px;">Stress Management - Menaxhimi i Stresit</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid #eee;">
+                                <td style="padding: 15px 20px; font-weight: 700; color: var(--primary-dark);">Mars</td>
+                                <td style="padding: 15px 20px;">Empathy - Empatia</td>
+                                <td style="padding: 15px 20px;">Humility - Përulësia</td>
+                                <td style="padding: 15px 20px;">Teamwork - Puna në Grup</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid #eee; background: #fbfcfe;">
+                                <td style="padding: 15px 20px; font-weight: 700; color: var(--primary-dark);">Prill</td>
+                                <td style="padding: 15px 20px;">Cooperation - Bashkëpunimi</td>
+                                <td style="padding: 15px 20px;">Trustworthiness - Besueshmëria</td>
+                                <td style="padding: 15px 20px;">Generosity - Bujaria</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid #eee;">
+                                <td style="padding: 15px 20px; font-weight: 700; color: var(--primary-dark);">Maj</td>
+                                <td style="padding: 15px 20px;">Gratitude - Mirënjohja</td>
+                                <td style="padding: 15px 20px;">Digital Citizenship - Qytetaria Dixhitale</td>
+                                <td style="padding: 15px 20px;">Service to others - Shërbimi për të tjerët</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid #eee; background: #fbfcfe;">
+                                <td style="padding: 15px 20px; font-weight: 700; color: var(--primary-dark);">Qershor</td>
+                                <td style="padding: 15px 20px;">Listening Skills - Aftësitë e dëgjimit</td>
+                                <td style="padding: 15px 20px;">Positive Attitude - Qëndrimi pozitiv</td>
+                                <td style="padding: 15px 20px; color: #ccc;">---</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- 3. Sistemi i Pikëve -->
+            <div id="points" class="tab-content-edu">
+                <div style="max-width: 800px; margin: 0 auto; text-align: center;">
+                    <h2 style="margin-bottom: 25px;">Si funksionon vlerësimi?</h2>
+                    <p style="margin-bottom: 40px; font-size: 1.1rem;">Sistemi ynë i pikëve vlerëson sjelljet pozitive
+                        jashtë kornizës vetëm akademike.</p>
+
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px;">
+                        <div
+                            style="padding: 25px; background: #fff; border-radius: 20px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); border: 1px solid #eee;">
+                            <i class="fas fa-clock"
+                                style="font-size: 2rem; color: var(--primary); margin-bottom: 15px;"></i>
+                            <h4>Pikualiteti</h4>
+                        </div>
+                        <div
+                            style="padding: 25px; background: #fff; border-radius: 20px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); border: 1px solid #eee;">
+                            <i class="fas fa-handshake"
+                                style="font-size: 2rem; color: var(--primary); margin-bottom: 15px;"></i>
+                            <h4>Bashkëpunimi</h4>
+                        </div>
+                        <div
+                            style="padding: 25px; background: #fff; border-radius: 20px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); border: 1px solid #eee;">
+                            <i class="fas fa-comments"
+                                style="font-size: 2rem; color: var(--primary); margin-bottom: 15px;"></i>
+                            <h4>Komunikimi</h4>
+                        </div>
+                        <div
+                            style="padding: 25px; background: #fff; border-radius: 20px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); border: 1px solid #eee;">
+                            <i class="fas fa-star"
+                                style="font-size: 2rem; color: var(--primary); margin-bottom: 15px;"></i>
+                            <h4>Roli Model</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 4. Certifikatat -->
+            <div id="certs" class="tab-content-edu">
+                <div style="text-align: center;">
+                    <h2 style="margin-bottom: 30px;">Shpërblimet dhe Certifikimi</h2>
+                    <p>Nxënësit tanë pajisen me certifikata merite bazuar në pikët e mbledhura gjatë vitit.</p>
+
+                    <div class="cert-tiers">
+                        <div class="cert-card bronze">
+                            <div class="cert-icon"><i class="fas fa-award" style="color: #cd7f32;"></i></div>
+                            <h3>Bronze</h3>
+                            <p>50 Pikë</p>
+                        </div>
+                        <div class="cert-card silver">
+                            <div class="cert-icon"><i class="fas fa-award" style="color: #c0c0c0;"></i></div>
+                            <h3>Silver</h3>
+                            <p>100 Pikë</p>
+                        </div>
+                        <div class="cert-card gold">
+                            <div class="cert-icon"><i class="fas fa-award" style="color: #ffd700;"></i></div>
+                            <h3>Gold</h3>
+                            <p>200 Pikë</p>
+                        </div>
+                        <div class="cert-card diamond">
+                            <div class="cert-icon"><i class="fas fa-gem" style="color: #70d1ff;"></i></div>
+                            <h3>Diamond</h3>
+                            <p>400 Pikë</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="cta-banner" style="margin-top: 100px;">
+            <div class="container reveal" style="text-align: center;">
+                <h2>Bëhu një nxënës i kompletuar</h2>
+                <p>Mëso se si Programi i Edukimit të Karakterit mund të transformojë të ardhmen tënde.</p>
+                <a href="contact.html" class="btn-enroll" style="margin-top: 20px; display: inline-block;">Na
+                    kontakto</a>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-grid">
+            <div class="footer-about">
+                <a href="#" class="footer-logo">
+                    <img src="https://gjimnazi-hasannahi.com/wp-content/uploads/2024/03/cropped-0.-logo-300x300.png"
+                        alt="Logo">
+                    <span class="name">HASAN NAHI</span>
+                </a>
+                <p>Edukojmë liderët e së ardhmes me përkushtim dhe profesionalizëm.</p>
+                <div class="social" style="margin-top: 20px;">
+                    <a href="https://www.facebook.com/HasanNahiOfficial/" target="_blank"
+                        style="background: rgba(255,255,255,0.1); width: 40px; height: 40px; display: inline-flex; align-items: center; justify-content: center; border-radius: 50%;"><i
+                            class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/gjimnazihasannahi/" target="_blank"
+                        style="background: rgba(255,255,255,0.1); width: 40px; height: 40px; display: inline-flex; align-items: center; justify-content: center; border-radius: 50%; margin-left: 10px;"><i
+                            class="fab fa-instagram"></i></a>
+                    <a href="https://www.youtube.com/@hasannahihighschool1784" target="_blank"
+                        style="background: rgba(255,255,255,0.1); width: 40px; height: 40px; display: inline-flex; align-items: center; justify-content: center; border-radius: 50%; margin-left: 10px;"><i
+                            class="fab fa-youtube"></i></a>
+                    <a href="https://www.tiktok.com/@hasan.nahi.high.s" target="_blank"
+                        style="background: rgba(255,255,255,0.1); width: 40px; height: 40px; display: inline-flex; align-items: center; justify-content: center; border-radius: 50%; margin-left: 10px;"><i
+                            class="fab fa-tiktok"></i></a>
+                </div>
+            </div>
+            <div class="footer-nav">
+                <h3 class="footer-title">Lidhje të Shpejta</h3>
+                <ul class="footer-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">Rreth Nesh</a></li>
+                    <li><a href="courses.html">Programet</a></li>
+                    <li><a href="achievements.html">Arritjet</a></li>
+                    <li><a href="education.html">Edukimi i Karakterit</a></li>
+                    <li><a href="eureka.html">Eureka 2025</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h3 class="footer-title">Na Kontaktoni</h3>
+                <p><i class="fas fa-map-marker-alt"></i> Banullë, Lipjan, 14000, Kosovë</p>
+                <p><i class="fas fa-phone"></i> +383 48 177 770</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Gjimnazi "Hasan Nahi".</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://unpkg.com/lenis@1.0.45/dist/lenis.min.js"></script>
+    <script src="js/main.js"></script>
+
+    <script>
+        // Education Tabs Logic
+        const eduTabBtns = document.querySelectorAll('.tab-btn-edu');
+        const eduTabContents = document.querySelectorAll('.tab-content-edu');
+
+        const switchTab = (target) => {
+            if(!target) return;
+            const targetBtn = document.querySelector(`.tab-btn-edu[data-tab="${target}"]`);
+            const targetContent = document.getElementById(target);
+            
+            if(targetBtn && targetContent) {
+                eduTabBtns.forEach(b => b.classList.remove('active'));
+                eduTabContents.forEach(c => c.classList.remove('active'));
+
+                targetBtn.classList.add('active');
+                targetContent.classList.add('active');
+                
+                // Scroll to tab area
+                targetContent.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }
+        };
+
+        eduTabBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const target = btn.dataset.tab;
+                switchTab(target);
+                // Update URL hash without jumping
+                history.pushState(null, null, `#${target}`);
+            });
+        });
+
+        // Handle URL Hash on Load & HashChange
+        const handleHash = () => {
+            const hash = window.location.hash.substring(1);
+            if(hash) {
+                switchTab(hash);
+            }
+        };
+
+        window.addEventListener('load', handleHash);
+        window.addEventListener('hashchange', handleHash);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gjimnazi "Hasan Nahi" | Eureka 2025</title>
+    <meta name="description"
+        content="Gara e Inteligjencës Eureka 13 - Gara më e madhe e matematikës dhe logjikës për klasët e 9-ta. Fito MacBook Air, iPad dhe bursa studimi.">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        .eureka-hero {
+            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%);
+            padding: 70px 0 100px;
+            position: relative;
+            color: white;
+            overflow: hidden;
+        }
+
+        .eureka-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .eureka-content .tag {
+            background: rgba(255, 215, 0, 0.2);
+            color: var(--accent);
+            border: none;
+            margin-bottom: 25px;
+        }
+
+        .eureka-content h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 25px;
+            line-height: 1.1;
+        }
+
+        .prize-list {
+            margin: 30px 0;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .prize-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+
+        .prize-item i {
+            color: var(--accent);
+            font-size: 1.5rem;
+        }
+
+        .eureka-visual {
+            position: relative;
+        }
+
+        .eureka-poster {
+            width: 100%;
+            border-radius: 24px;
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .phases-section {
+            margin-top: -80px;
+            position: relative !important;
+            z-index: 100 !important;
+        }
+
+        .phase-card {
+            background: var(--white);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            border-top: 5px solid var(--primary);
+            transition: 0.3s;
+        }
+
+        .phase-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .phase-number {
+            width: 60px;
+            height: 60px;
+            background: var(--primary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 1.5rem;
+            box-shadow: 0 5px 15px rgba(0, 74, 173, 0.2);
+        }
+
+        /* FAQ Tabs */
+        .faq-tabs {
+            margin-top: 50px;
+        }
+
+        .tab-nav {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+
+        .tab-btn {
+            padding: 12px 25px;
+            border-radius: 50px;
+            border: none;
+            background: #f0f0f0;
+            color: var(--primary-dark);
+            font-weight: 700;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .tab-btn.active {
+            background: var(--primary);
+            color: white;
+        }
+
+        .tab-btn.highlight {
+            background: #60c377;
+            color: white;
+        }
+
+        .tab-content {
+            display: none;
+            background: var(--white);
+            padding: 40px;
+            border-radius: 24px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            animation: fadeIn 0.5s ease;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 991px) {
+            .eureka-grid {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .eureka-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .prize-list {
+                align-items: center;
+            }
+        }
+    </style>
+    <!-- Favicon -->
+    <link rel="icon" href="https://gjimnazi-hasannahi.com/wp-content/uploads/2024/03/cropped-0.-logo-32x32.png"
+        sizes="32x32">
+    <link rel="icon" href="https://gjimnazi-hasannahi.com/wp-content/uploads/2024/03/cropped-0.-logo-192x192.png"
+        sizes="192x192">
+    <link rel="apple-touch-icon"
+        href="https://gjimnazi-hasannahi.com/wp-content/uploads/2024/03/cropped-0.-logo-180x180.png">
+</head>
+
+<body>
+
+    <!-- Preloader -->
+    <div id="preloader">
+        <img src="https://gjimnazi-hasannahi.com/wp-content/uploads/2024/03/cropped-0.-logo-300x300.png" alt="Logo"
+            class="loader-logo">
+        <div class="loader-text">
+            <span class="hasan">HASAN</span>
+            <span class="nahi">NAHI</span>
+        </div>
+        <div class="loader-spinner"></div>
+    </div>
+
+    <!-- Header / Top Bar -->
+    <header class="top-bar">
+        <div class="container bar-wrap">
+            <div class="info">
+                <span><i class="fas fa-envelope"></i> gjimnazihasannahi@gmail.com</span>
+                <span><i class="fas fa-phone"></i> +383 48 177 770</span>
+                <span class="d-none d-md-inline"><i class="fas fa-clock"></i> E Hënë - E Premte: 08:00 - 16:00</span>
+            </div>
+            <div class="social">
+                <a href="https://www.facebook.com/HasanNahiOfficial/" target="_blank"><i
+                        class="fab fa-facebook-f"></i></a>
+                <a href="https://www.instagram.com/gjimnazihasannahi/" target="_blank"><i
+                        class="fab fa-instagram"></i></a>
+                <a href="https://www.linkedin.com/school/hasannahi/" target="_blank"><i
+                        class="fab fa-linkedin-in"></i></a>
+                <a href="https://www.youtube.com/@hasannahihighschool1784" target="_blank"><i
+                        class="fab fa-youtube"></i></a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="main-nav">
+        <div class="container nav-wrap">
+            <a href="index.html" class="logo">
+                <img src="https://gjimnazi-hasannahi.com/wp-content/uploads/2024/03/cropped-0.-logo-300x300.png"
+                    alt="Gjimnazi Hasan Nahi Logo">
+                <div class="logo-text">
+                    <span class="name">HASAN NAHI</span>
+                    <span class="sub">AKADEMIA E SHKËLQËSISË</span>
+                </div>
+            </a>
+            <div class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">Rreth Nesh</a></li>
+                <li><a href="courses.html">Programet</a></li>
+                <li><a href="achievements.html">Arritjet</a></li>
+                <li><a href="revista.html">Revista</a></li>
+                <li><a href="eureka.html" class="active">Eureka</a></li>
+                <li class="nav-item-dropdown">
+                    <a href="education.html">Character Education <i class="fas fa-chevron-down"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="education.html#program">Programi</a></li>
+                        <li><a href="education.html#themes">Temat e Muajve</a></li>
+                        <li><a href="education.html#points">Sistemi i Pikëve</a></li>
+                        <li><a href="education.html#certs">Sistemi i Certifikatave</a></li>
+                    </ul>
+                </li>
+                <li><a href="contact.html">Kontakti</a></li>
+            </ul>
+            <a href="contact.html" class="btn-enroll">Apliko Tani</a>
+        </div>
+    </nav>
+
+    <div class="page-wrapper">
+        <!-- Hero Section -->
+        <section class="eureka-hero">
+            <div class="container">
+                <div class="eureka-grid">
+                    <div class="eureka-content">
+                        <span class="tag">Eureka 13 - 2025</span>
+                        <h1 style="color: #ffffff; text-shadow: 0 2px 10px rgba(0,0,0,0.2);">Gara e Inteligjencës me e
+                            madhe në vend!</h1>
+                        <p style="font-size: 1.2rem; margin-bottom: 25px; opacity: 0.9;">
+                            Ftojmë të gjithë nxënësit e klasave të 9-ta të sfidojnë veten në matematikë dhe logjikë.
+                            Gara "Eureka" është mundësia juaj për të fituar bursa dhe çmime fantastike.
+                        </p>
+                        <div class="prize-list">
+                            <div class="prize-item"><i class="fas fa-laptop"></i> 1st Place: MacBook Air</div>
+                            <div class="prize-item"><i class="fas fa-tablet-alt"></i> 2nd Place: iPad</div>
+                            <div class="prize-item"><i class="fas fa-clock"></i> 3rd Place: Apple Watch</div>
+                        </div>
+                        <a href="" class="btn-primary"
+                            style="background: var(--accent); color: var(--primary-dark); padding: 18px 45px; border-radius: 50px;">
+                            Apliko Tani <i class="fas fa-arrow-right" style="margin-left: 10px;"></i>
+                        </a>
+                    </div>
+                    <div class="eureka-visual">
+                        <img src="/assets/eureka.webp" alt="Eureka 13 Poster" class="eureka-poster">
+                    </div>
+                </div>
+            </div>
+            <!-- Slant Divider -->
+            <div class="wave-divider" style="bottom: -2px;">
+                <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
+                    <path d="M1200 120L0 120L0 0Z" class="shape-fill" style="fill: #f8faff;"></path>
+                </svg>
+            </div>
+        </section>
+
+        <!-- Phases -->
+        <section class="phases-section container">
+            <div class="grid-3">
+                <div class="phase-card reveal">
+                    <div class="phase-number"><i class="fas fa-laptop-code"></i></div>
+                    <h3 style="margin-bottom: 10px;">Faza e Parë</h3>
+                    <p style="color: var(--primary); font-weight: 700; margin-bottom: 15px;">Online</p>
+                    <p>22 Dhjetor 2025<br>Ora 19:00</p>
+                </div>
+                <div class="phase-card reveal" style="border-top-color: var(--accent);">
+                    <div class="phase-number" style="background: var(--accent); color: var(--primary-dark);"><i
+                            class="fas fa-users"></i></div>
+                    <h3 style="margin-bottom: 10px;">Faza e Dytë</h3>
+                    <p style="color: var(--primary); font-weight: 700; margin-bottom: 15px;">Fizikisht në Shkollë</p>
+                    <p>10 Janar 2026<br>Ora 10:00</p>
+                </div>
+                <div class="phase-card reveal">
+                    <div class="phase-number"><i class="fas fa-graduation-cap"></i></div>
+                    <h3 style="margin-bottom: 10px;">Bursat</h3>
+                    <p style="color: var(--primary); font-weight: 700; margin-bottom: 15px;">Përfitimi</p>
+                    <p>Bursa deri në 100%<br>për fituesit.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Details & FAQ -->
+        <section class="eureka-faq container" style="padding: 60px 0 100px;">
+            <div class="section-title reveal">
+                <h2 class="gradient-text">Pyetjet e shpeshta</h2>
+                <p>Gjithçka që duhet të dini për mbarëvajtjen e garës.</p>
+            </div>
+
+            <div class="faq-tabs reveal">
+                <div class="tab-nav">
+                    <button class="tab-btn active" data-tab="flow">Si zhvillohet kjo garë?</button>
+                    <button class="tab-btn" data-tab="content">Çka përfshihet në Test?</button>
+                    <button class="tab-btn highlight" data-tab="models">Modele pyetjesh!</button>
+                </div>
+
+                <div id="flow" class="tab-content active">
+                    <div style="max-width: 800px; margin: 0 auto;">
+                        <p style="font-size: 1.1rem; line-height: 1.8; margin-bottom: 20px;">
+                            Gara e inteligjencës Eureka është e ndarë në dy faza kryesore:
+                        </p>
+                        <ul style="list-style: none; padding: 0;">
+                            <li style="margin-bottom: 15px; display: flex; gap: 15px; align-items: flex-start;">
+                                <i class="fas fa-check-circle" style="color: #60c377; margin-top: 5px;"></i>
+                                <span><strong>Faza e Parë:</strong> Zhvillohet online në platformën tonë. 100 nxënësit
+                                    me rezultatet më të larta kualifikohen për fazën finale.</span>
+                            </li>
+                            <li style="margin-bottom: 15px; display: flex; gap: 15px; align-items: flex-start;">
+                                <i class="fas fa-check-circle" style="color: #60c377; margin-top: 5px;"></i>
+                                <span><strong>Faza e Dytë:</strong> Zhvillohet fizikisht në ambientet e Gjimnazit "Hasan
+                                    Nahi".</span>
+                            </li>
+                            <li style="margin-bottom: 15px; display: flex; gap: 15px; align-items: flex-start;">
+                                <i class="fas fa-check-circle" style="color: #60c377; margin-top: 5px;"></i>
+                                <span><strong>Certifikimi:</strong> Çdo pjesëmarrës në fazën finale pajiset me
+                                    certifikatë pjesëmarrjeje.</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div id="content" class="tab-content">
+                    <div style="max-width: 800px; margin: 0 auto; text-align: center;">
+                        <h4 style="font-size: 1.5rem; margin-bottom: 20px;">Struktura e Testit</h4>
+                        <p style="font-size: 1.1rem; line-height: 1.8; margin-bottom: 30px;">
+                            Testi përmban gjithsej <strong>30 pyetje</strong> të cilat vlerësojnë logjikën dhe njohuritë
+                            matematikore të nxënësve.
+                        </p>
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                            <div style="padding: 20px; background: #f8faff; border-radius: 15px;">
+                                <i class="fas fa-calculator"
+                                    style="font-size: 2rem; color: var(--primary); margin-bottom: 10px;"></i>
+                                <h5>Matematikë</h5>
+                                <p>Njohuri nga kurrikula e klasës së 9-të.</p>
+                            </div>
+                            <div style="padding: 20px; background: #f8faff; border-radius: 15px;">
+                                <i class="fas fa-brain"
+                                    style="font-size: 2rem; color: var(--primary); margin-bottom: 10px;"></i>
+                                <h5>Logjikë</h5>
+                                <p>Pyetje për vlerësimin e rritësimit logjik.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="models" class="tab-content">
+                    <div style="max-width: 800px; margin: 0 auto; text-align: center;">
+                        <h4>Përgatitu për sukses!</h4>
+                        <p style="margin-bottom: 30px;">Shkarkoni modelet e pyetjeve nga vitet e kaluara për të
+                            ushtruar.</p>
+                        <div style="display: flex; justify-content: center; gap: 20px;">
+                            <a href="#" class="btn-read"><i class="fas fa-file-pdf"></i> Eureka 12 Model</a>
+                            <a href="#" class="btn-read"><i class="fas fa-file-pdf"></i> Eureka 11 Model</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-grid">
+            <div class="footer-about">
+                <a href="#" class="footer-logo">
+                    <img src="https://gjimnazi-hasannahi.com/wp-content/uploads/2024/03/cropped-0.-logo-300x300.png"
+                        alt="Logo">
+                    <span class="name">HASAN NAHI</span>
+                </a>
+                <p>Edukojmë liderët e së ardhmes me përkushtim dhe profesionalizëm. Gjimnazi Hasan Nahi është shtëpia e
+                    dijes tuaj.</p>
+                <div class="social" style="margin-top: 20px;">
+                    <a href="https://www.facebook.com/HasanNahiOfficial/" target="_blank"
+                        style="background: rgba(255,255,255,0.1); width: 40px; height: 40px; display: inline-flex; align-items: center; justify-content: center; border-radius: 50%;"><i
+                            class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/gjimnazihasannahi/" target="_blank"
+                        style="background: rgba(255,255,255,0.1); width: 40px; height: 40px; display: inline-flex; align-items: center; justify-content: center; border-radius: 50%; margin-left: 10px;"><i
+                            class="fab fa-instagram"></i></a>
+                    <a href="https://www.youtube.com/@hasannahihighschool1784" target="_blank"
+                        style="background: rgba(255,255,255,0.1); width: 40px; height: 40px; display: inline-flex; align-items: center; justify-content: center; border-radius: 50%; margin-left: 10px;"><i
+                            class="fab fa-youtube"></i></a>
+                    <a href="https://www.tiktok.com/@hasan.nahi.high.s" target="_blank"
+                        style="background: rgba(255,255,255,0.1); width: 40px; height: 40px; display: inline-flex; align-items: center; justify-content: center; border-radius: 50%; margin-left: 10px;"><i
+                            class="fab fa-tiktok"></i></a>
+                </div>
+            </div>
+            <div class="footer-nav">
+                <h3 class="footer-title">Lidhje të Shpejta</h3>
+                <ul class="footer-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="eureka.html">Eureka 2025</a></li>
+                    <li><a href="education.html">Character Education</a></li>
+                    <li><a href="contact.html" class="active">Kontakti</a></li>
+                    <li><a href="achievements.html">Arritjet</a></li>
+                    <li><a href="revista.html">Revista HANA</a></li>
+                    <li><a href="eureka.html">Eureka</a></li>
+                </ul>
+            </div>
+            <div class="footer-nav">
+                <h3 class="footer-title">Programet tona</h3>
+                <ul class="footer-links">
+                    <li><a href="#">Shkencat Natyrore</a></li>
+                    <li><a href="#">Shkencat Shoqërore</a></li>
+                    <li><a href="#">IT dhe Robotikë</a></li>
+                    <li><a href="#">Garat Shkencore</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h3 class="footer-title">Na Kontaktoni</h3>
+                <p><i class="fas fa-map-marker-alt"></i> Banullë, Lipjan, 14000, Kosovë</p>
+                <p><i class="fas fa-phone"></i> +383 48 177 770</p>
+                <p><i class="fas fa-envelope"></i> gjimnazihasannahi@gmail.com</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Gjimnazi "Hasan Nahi". Të gjitha të drejtat të rezervuara.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://unpkg.com/lenis@1.0.45/dist/lenis.min.js"></script>
+    <script src="js/main.js"></script>
+
+    <script>
+        // FAQ Tabs Logic
+        const tabBtns = document.querySelectorAll('.tab-btn');
+        const tabContents = document.querySelectorAll('.tab-content');
+
+        tabBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const target = btn.dataset.tab;
+
+                tabBtns.forEach(b => b.classList.remove('active'));
+                tabContents.forEach(c => c.classList.remove('active'));
+
+                btn.classList.add('active');
+                document.getElementById(target).classList.add('active');
+            });
+        });
+    </script>
+
+</body>
+
+</html>

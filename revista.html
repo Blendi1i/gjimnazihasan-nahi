@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gjimnazi "Hasan Nahi" | Revista Hana</title>
+    <meta name="description"
+        content="Revista shkollore 'Hana' e Gjimnazit Hasan Nahi - Shkenca, aktivitetet dhe projektet tona.">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        .magazine-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 50px;
+        }
+
+        .magazine-card {
+            background: var(--white);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            transition: 0.4s;
+            text-align: center;
+            border: 1px solid #eee;
+        }
+
+        .magazine-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 50px rgba(0, 74, 173, 0.15);
+        }
+
+        .magazine-cover {
+            height: 450px;
+            background: #f0f0f0;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .magazine-cover img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: 0.5s;
+        }
+
+        .magazine-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 74, 173, 0.8);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: 0.3s;
+        }
+
+        .magazine-card:hover .magazine-overlay {
+            opacity: 1;
+        }
+
+        .magazine-info {
+            padding: 25px;
+        }
+
+        .magazine-info h3 {
+            color: var(--primary-dark);
+            margin-bottom: 10px;
+        }
+
+        .magazine-info p {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+
+        .btn-read {
+            display: inline-block;
+            padding: 10px 25px;
+            background: var(--primary);
+            color: var(--white);
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        .btn-read:hover {
+            background: var(--accent);
+            color: var(--primary-dark);
+        }
+    </style>
+    <!-- Favicon -->
+    <link rel="icon" href="https://gjimnazi-hasannahi.com/wp-content/uploads/2024/03/cropped-0.-logo-32x32.png" sizes="32x32">
+    <link rel="icon" href="https://gjimnazi-hasannahi.com/wp-content/uploads/2024/03/cropped-0.-logo-192x192.png" sizes="192x192">
+    <link rel="apple-touch-icon" href="https://gjimnazi-hasannahi.com/wp-content/uploads/2024/03/cropped-0.-logo-180x180.png">
+</head>
+
+<body>
+
+    <!-- Preloader -->
+    <div id="preloader">
+        <img src="https://gjimnazi-hasannahi.com/wp-content/uploads/2024/03/cropped-0.-logo-300x300.png" alt="Logo" class="loader-logo">
+        <div class="loader-text">
+            <span class="hasan">HASAN</span>
+            <span class="nahi">NAHI</span>
+        </div>
+        <div class="loader-spinner"></div>
+    </div>
+
+    <!-- Header / Top Bar -->
+    <header class="top-bar">
+        <div class="container bar-wrap">
+            <div class="info">
+                <span><i class="fas fa-envelope"></i> gjimnazihasannahi@gmail.com</span>
+                <span><i class="fas fa-phone"></i> +383 48 177 770</span>
+                <span class="d-none d-md-inline"><i class="fas fa-clock"></i> E Hënë - E Premte: 08:00 - 16:00</span>
+            </div>
+            <div class="social">
+                <a href="https://www.facebook.com/HasanNahiOfficial/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.instagram.com/gjimnazihasannahi/" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.linkedin.com/school/hasannahi/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://www.youtube.com/@hasannahihighschool1784" target="_blank"><i class="fab fa-youtube"></i></a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="main-nav">
+        <div class="container nav-wrap">
+            <a href="index.html" class="logo">
+                <img src="https://gjimnazi-hasannahi.com/wp-content/uploads/2024/03/cropped-0.-logo-300x300.png"
+                    alt="Gjimnazi Hasan Nahi Logo">
+                <div class="logo-text">
+                    <span class="name">HASAN NAHI</span>
+                    <span class="sub">AKADEMIA E SHKËLQËSISË</span>
+                </div>
+            </a>
+            <div class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">Rreth Nesh</a></li>
+                <li><a href="courses.html">Programet</a></li>
+                <li><a href="achievements.html">Arritjet</a></li>
+                <li><a href="revista.html" class="active">Revista</a></li>
+                <li><a href="eureka.html">Eureka</a></li>
+                <li class="nav-item-dropdown">
+                    <a href="education.html">Character Education <i class="fas fa-chevron-down"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="education.html#program">Programi</a></li>
+                        <li><a href="education.html#themes">Temat e Muajve</a></li>
+                        <li><a href="education.html#points">Sistemi i Pikëve</a></li>
+                        <li><a href="education.html#certs">Sistemi i Certifikatave</a></li>
+                    </ul>
+                </li>
+                <li><a href="contact.html">Kontakti</a></li>
+            </ul>
+            <a href="contact.html" class="btn-enroll">Apliko Tani</a>
+        </div>
+    </nav>
+
+    <div class="page-wrapper">
+        <div class="blob-1"></div>
+        <div class="blob-2"></div>
+
+        <!-- Modernized Banner -->
+        <section class="hero-modern" style="background-image: url('https://images.unsplash.com/photo-1507413245164-6160d8298b31?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');">
+            <div class="hero-overlay"></div>
+            <div class="container">
+                <div class="hero-modern-content">
+                    <span class="hero-tag">Revista HANA</span>
+                    <h1>Zbuloni Kreativitetin</h1>
+                    <p>Zbuloni mendimet, shkencën dhe artin e krijuar nga nxënësit tanë.</p>
+                    <div class="hero-accent-line"></div>
+                </div>
+            </div>
+            <div class="wave-divider">
+                <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
+                    <path d="M1200 120L0 120L0 0Z" class="shape-fill"></path>
+                </svg>
+            </div>
+        </section>
+
+        <!-- Magazine Issues -->
+        <section class="magazine container" style="padding: 60px 0;">
+            <div class="section-title reveal">
+                <h2 class="gradient-text">Botimet Tona</h2>
+                <p>Revista HANA është pasqyra e jetës sonë shkollore, ku ndërthurim shkencën me kreativitetin.</p>
+            </div>
+
+            <div class="magazine-grid">
+                <!-- Issue 2024 -->
+                <div class="magazine-card reveal" style="border: none; border-radius: 24px; box-shadow: 0 15px 35px rgba(0,0,0,0.05);">
+                    <div class="magazine-cover">
+                        <img src="assets/Untitled.png" alt="Revista Hana Vol 4">
+                        <div class="magazine-overlay">
+                            <a href="https://online.fliphtml5.com/kcrcp/nnxz/" target="_blank" class="btn-read">Lexo Online <i class="fas fa-external-link-alt"></i></a>
+                        </div>
+                    </div>
+                    <div class="magazine-info">
+                        <h3>HANA - Volumi 4</h3>
+                        <p>Viti Akademik 2024-2025</p>
+                        <p>Ky numër fokusohet në sukseset e fundit në garat Eureka dhe projektet inovative të drejtimit të TIK-ut.</p>
+                    </div>
+                </div>
+
+                <!-- Issue 2023 -->
+                <div class="magazine-card reveal" style="border: none; border-radius: 24px; box-shadow: 0 15px 35px rgba(0,0,0,0.05);">
+                    <div class="magazine-cover">
+                        <img src="assets/untiled2.png" alt="Revista Hana Vol 2">
+                        <div class="magazine-overlay">
+                            <a href="https://online.fliphtml5.com/jmdxp/nfrv/#p=1" target="_blank" class="btn-read">Lexo Online <i class="fas fa-external-link-alt"></i></a>
+                        </div>
+                    </div>
+                    <div class="magazine-info">
+                        <h3>HANA - Volumi 2</h3>
+                        <p>Viti Akademik 2022-2023</p>
+                        <p>Një përmbledhje e aktiviteteve ASEF-Social dhe punimeve shkencore nga drejtimi i Shkencave Natyrore.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Magazine Features -->
+        <section class="magazine-features" style="padding: 100px 0 150px;">
+            <div class="container reveal">
+                <div class="about-grid" style="background: var(--white); padding: 50px; border-radius: 24px; box-shadow: 0 20px 40px rgba(0,0,0,0.03);">
+                    <div class="about-content">
+                        <span class="tag">Përmbajtja</span>
+                        <h3 style="font-size: 2.2rem; margin-bottom: 25px; color: var(--primary-dark);">Çfarë përmban revista HANA?</h3>
+                        <ul style="list-style: none; padding: 0; margin-top: 25px;">
+                            <li style="margin-bottom: 25px; display: flex; align-items: flex-start; gap: 20px;">
+                                <i class="fas fa-flask" style="color: var(--white); background: var(--primary); padding: 15px; border-radius: 12px; font-size: 1.2rem;"></i>
+                                <div>
+                                    <h4 style="margin-bottom: 8px; font-size: 1.2rem;">Eksperimente Shkencore</h4>
+                                    <p style="color: var(--text-muted);">Raporte dhe punime nga garat tona kombëtare "Eureka".</p>
+                                </div>
+                            </li>
+                            <li style="margin-bottom: 25px; display: flex; align-items: flex-start; gap: 20px;">
+                                <i class="fas fa-hand-holding-heart" style="color: var(--white); background: var(--primary); padding: 15px; border-radius: 12px; font-size: 1.2rem;"></i>
+                                <div>
+                                    <h4 style="margin-bottom: 8px; font-size: 1.2rem;">Përgjegjësia Sociale</h4>
+                                    <p style="color: var(--text-muted);">Pasqyrimi i aktiviteteve të fondacionit "Atmosfera" dhe projekteve ASEF.</p>
+                                </div>
+                            </li>
+                            <li style="margin-bottom: 25px; display: flex; align-items: flex-start; gap: 20px;">
+                                <i class="fas fa-award" style="color: var(--white); background: var(--primary); padding: 15px; border-radius: 12px; font-size: 1.2rem;"></i>
+                                <div>
+                                    <h4 style="margin-bottom: 8px; font-size: 1.2rem;">Sukseset e Nxënësve</h4>
+                                    <p style="color: var(--text-muted);">Intervista me fituesit e olimpiadave dhe tregimet e tyre të suksesit.</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="about-img">
+                        <img src="https://images.unsplash.com/photo-1488190211105-8b0e65b80b4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Writing" style="width: 100%; border-radius: 20px; box-shadow: 0 20px 40px rgba(0,0,0,0.1);">
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-grid">
+            <div class="footer-about">
+                <a href="#" class="footer-logo">
+                    <img src="https://gjimnazi-hasannahi.com/wp-content/uploads/2024/03/cropped-0.-logo-300x300.png"
+                        alt="Logo">
+                    <span class="name">HASAN NAHI</span>
+                </a>
+                <p>Edukojmë liderët e së ardhmes me përkushtim dhe profesionalizëm. Gjimnazi Hasan Nahi është shtëpia e
+                    dijes tuaj.</p>
+                <div class="social" style="margin-top: 20px;">
+                    <a href="https://www.facebook.com/HasanNahiOfficial/" target="_blank"
+                        style="background: rgba(255,255,255,0.1); width: 40px; height: 40px; display: inline-flex; align-items: center; justify-content: center; border-radius: 50%;"><i
+                            class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/gjimnazihasannahi/" target="_blank"
+                        style="background: rgba(255,255,255,0.1); width: 40px; height: 40px; display: inline-flex; align-items: center; justify-content: center; border-radius: 50%; margin-left: 10px;"><i
+                            class="fab fa-instagram"></i></a>
+                    <a href="https://www.youtube.com/@hasannahihighschool1784" target="_blank"
+                        style="background: rgba(255,255,255,0.1); width: 40px; height: 40px; display: inline-flex; align-items: center; justify-content: center; border-radius: 50%; margin-left: 10px;"><i
+                            class="fab fa-youtube"></i></a>
+                    <a href="https://www.tiktok.com/@hasan.nahi.high.s" target="_blank"
+                        style="background: rgba(255,255,255,0.1); width: 40px; height: 40px; display: inline-flex; align-items: center; justify-content: center; border-radius: 50%; margin-left: 10px;"><i
+                            class="fab fa-tiktok"></i></a>
+                </div>
+            </div>
+            <div class="footer-nav">
+                <h3 class="footer-title">Lidhje të Shpejta</h3>
+                <ul class="footer-links">
+                    <li><a href="index.html">Ballina</a></li>
+                    <li><a href="about.html">Rreth Nesh</a></li>
+                    <li><a href="courses.html">Programet</a></li>
+                    <li><a href="achievements.html">Arritjet</a></li>
+                    <li><a href="revista.html">Revista HANA</a></li>
+                    <li><a href="eureka.html">Eureka 2025</a></li>
+                    <li><a href="education.html">Character Education</a></li>
+                    <li><a href="contact.html">Kontakti</a></li>
+                </ul>
+            </div>
+            <div class="footer-nav">
+                <h3 class="footer-title">Programet tona</h3>
+                <ul class="footer-links">
+                    <li><a href="#">Shkencat Natyrore</a></li>
+                    <li><a href="#">Shkencat Shoqërore</a></li>
+                    <li><a href="#">IT dhe Robotikë</a></li>
+                    <li><a href="#">Garat Shkencore</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h3 class="footer-title">Na Kontaktoni</h3>
+                <p><i class="fas fa-map-marker-alt"></i> Banullë, Lipjan, 14000, Kosovë</p>
+                <p><i class="fas fa-phone"></i> +383 48 177 770</p>
+                <p><i class="fas fa-envelope"></i> gjimnazihasannahi@gmail.com</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Gjimnazi "Hasan Nahi". Të gjitha të drejtat të rezervuara.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://unpkg.com/lenis@1.0.45/dist/lenis.min.js"></script>
+    <script src="js/main.js"></script>
+
+</body>
+
+</html>

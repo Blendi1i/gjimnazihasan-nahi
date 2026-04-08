@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gjimnazi "Hasan Nahi" | Arritjet</title>
+    <meta name="description" content="Krenohemi me arritjet e nxënësve tanë në gara kombëtare dhe ndërkombëtare.">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        .achievements-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 50px;
+        }
+
+        .achievement-card {
+            background: var(--white);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            transition: 0.4s;
+            text-align: center;
+            border-bottom: 4px solid var(--primary);
+            cursor: pointer;
+            padding: 30px;
+            position: relative;
+        }
+
+        .achievement-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            background: var(--light);
+        }
+
+        .achievement-icon {
+            font-size: 3rem;
+            color: #ffd700;
+            margin-bottom: 20px;
+        }
+
+        .achievement-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            color: var(--primary-dark);
+        }
+
+        .achievement-card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+        }
+
+        .achievement-card .click-instruction {
+            font-size: 0.85rem;
+            color: var(--primary);
+            font-weight: bold;
+            display: inline-block;
+            transition: 0.3s;
+        }
+
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 9999;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(5px);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .modal.show {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 1;
+        }
+
+        .modal-content {
+            background-color: #fefefe;
+            margin: auto;
+            padding: 30px;
+            border-radius: 15px;
+            width: 90%;
+            max-width: 600px;
+            position: relative;
+            transform: scale(0.8);
+            transition: transform 0.3s ease;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+            text-align: center;
+        }
+
+        .modal.show .modal-content {
+            transform: scale(1);
+        }
+
+        .close-modal {
+            color: #aaa;
+            position: absolute;
+            top: 15px;
+            right: 25px;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .close-modal:hover,
+        .close-modal:focus {
+            color: var(--primary-dark);
+            text-decoration: none;
+        }
+
+        .modal-body img {
+            width: 100%;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .modal-body h4 {
+            color: var(--primary-dark);
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        .modal-body p {
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+
+        .student-names {
+            font-weight: bold;
+            color: var(--primary);
+            margin-top: 15px;
+            display: block;
+            font-size: 1.1rem;
+        }
+    </style>
+    <!-- Favicon -->
+    <link rel="icon" href="https://gjimnazi-hasannahi.com/wp-content/uploads/2024/03/cropped-0.-logo-32x32.png"
+        sizes="32x32">
+    <link rel="icon" href="https://gjimnazi-hasannahi.com/wp-content/uploads/2024/03/cropped-0.-logo-192x192.png"
+        sizes="192x192">
+    <link rel="apple-touch-icon"
+        href="https://gjimnazi-hasannahi.com/wp-content/uploads/2024/03/cropped-0.-logo-180x180.png">
+</head>
+
+<body>
+
+    <!-- Preloader -->
+    <div id="preloader">
+        <img src="https://gjimnazi-hasannahi.com/wp-content/uploads/2024/03/cropped-0.-logo-300x300.png" alt="Logo"
+            class="loader-logo">
+        <div class="loader-text">
+            <span class="hasan">HASAN</span>
+            <span class="nahi">NAHI</span>
+        </div>
+        <div class="loader-spinner"></div>
+    </div>
+
+    <!-- Header / Top Bar -->
+    <header class="top-bar">
+        <div class="container bar-wrap">
+            <div class="info">
+                <span><i class="fas fa-envelope"></i> gjimnazihasannahi@gmail.com</span>
+                <span><i class="fas fa-phone"></i> +383 48 177 770</span>
+                <span class="d-none d-md-inline"><i class="fas fa-clock"></i> E Hënë - E Premte: 08:00 - 16:00</span>
+            </div>
+            <div class="social">
+                <a href="https://www.facebook.com/HasanNahiOfficial/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.instagram.com/gjimnazihasannahi/" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.linkedin.com/school/hasannahi/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://www.youtube.com/@hasannahihighschool1784" target="_blank"><i class="fab fa-youtube"></i></a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="main-nav">
+        <div class="container nav-wrap">
+            <a href="index.html" class="logo">
+                <img src="https://gjimnazi-hasannahi.com/wp-content/uploads/2024/03/cropped-0.-logo-300x300.png"
+                    alt="Gjimnazi Hasan Nahi Logo">
+                <div class="logo-text">
+                    <span class="name">HASAN NAHI</span>
+                    <span class="sub">AKADEMIA E SHKËLQËSISË</span>
+                </div>
+            </a>
+            <div class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">Rreth Nesh</a></li>
+                <li><a href="courses.html">Programet</a></li>
+                <li><a href="achievements.html" class="active">Arritjet</a></li>
+                <li><a href="revista.html">Revista</a></li>
+                <li><a href="eureka.html">Eureka</a></li>
+                <li class="nav-item-dropdown">
+                    <a href="education.html">Character Education <i class="fas fa-chevron-down"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="education.html#program">Programi</a></li>
+                        <li><a href="education.html#themes">Temat e Muajve</a></li>
+                        <li><a href="education.html#points">Sistemi i Pikëve</a></li>
+                        <li><a href="education.html#certs">Sistemi i Certifikatave</a></li>
+                    </ul>
+                </li>
+                <li><a href="contact.html">Kontakti</a></li>
+            </ul>
+            <a href="contact.html" class="btn-enroll">Apliko Tani</a>
+        </div>
+    </nav>
+
+    <div class="page-wrapper">
+        <div class="blob-1"></div>
+        <div class="blob-2"></div>
+
+        <!-- Modernized Banner -->
+        <section class="hero-modern"
+            style="background-image: url('https://images.unsplash.com/photo-1523050853063-bd81d13bd2c9?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');">
+            <div class="hero-overlay"></div>
+            <div class="container">
+                <div class="hero-modern-content">
+                    <span class="hero-tag">Muri i Suksesit</span>
+                    <h1>Arritjet tona</h1>
+                    <p>Krenohemi me nxënësit tanë që ngrenë lart emrin e shkollës në gara kombëtare dhe ndërkombëtare.
+                    </p>
+                    <div class="hero-accent-line"></div>
+                </div>
+            </div>
+            <div class="wave-divider">
+                <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
+                    <path d="M1200 120L0 120L0 0Z" class="shape-fill"></path>
+                </svg>
+            </div>
+        </section>
+
+        <!-- Wall of Fame Content -->
+        <section class="achievements container" style="padding: 60px 0 100px;">
+            <div class="section-title reveal">
+                <h2 class="gradient-text">Kampionët Tanë</h2>
+                <p>Klikoni mbi secilën arritje për të parë nxënësit fitues.</p>
+            </div>
+
+            <div class="achievements-grid">
+                <!-- Achievement 1 -->
+                <div class="achievement-card reveal" onclick="openModal('modal1')">
+                    <div class="achievement-icon" style="text-shadow: 0 10px 20px rgba(255, 215, 0, 0.4);">
+                        <i class="fas fa-trophy"></i>
+                    </div>
+                    <h3>Olimpiada Ndërkombëtare e Matematikës</h3>
+                    <p>Medalje e Artë dhe e Argjendtë në garën ndërkombëtare IMO.</p>
+                    <span class="click-instruction">Kliko për të parë fotot <i class="fas fa-arrow-right"></i></span>
+                </div>
+
+                <!-- Achievement 2 -->
+                <div class="achievement-card reveal" onclick="openModal('modal2')">
+                    <div class="achievement-icon" style="text-shadow: 0 10px 20px rgba(255, 215, 0, 0.4);">
+                        <i class="fas fa-medal"></i>
+                    </div>
+                    <h3>Gara Shkencore Eureka</h3>
+                    <p>Vendi i parë në projektet e shkencave natyrore dhe robotikës.</p>
+                    <span class="click-instruction">Kliko për të parë fotot <i class="fas fa-arrow-right"></i></span>
+                </div>
+
+                <!-- Achievement 3 -->
+                <div class="achievement-card reveal" onclick="openModal('modal3')">
+                    <div class="achievement-icon" style="text-shadow: 0 10px 20px rgba(255, 215, 0, 0.4);">
+                        <i class="fas fa-award"></i>
+                    </div>
+                    <h3>Kampionati Kombëtar i Debatit</h3>
+                    <p>Shoqëria e debatit e shkollës sonë u shpall kampione kombëtare.</p>
+                    <span class="click-instruction">Kliko për të parë fotot <i class="fas fa-arrow-right"></i></span>
+                </div>
+
+                <!-- Achievement 4 -->
+                <div class="achievement-card reveal" onclick="openModal('modal4')">
+                    <div class="achievement-icon" style="text-shadow: 0 10px 20px rgba(255, 215, 0, 0.4);">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h3>Gara e Programimit "CodeFest"</h3>
+                    <p>Çmimi Inovacioni më i mirë për aplikacionin shkollor.</p>
+                    <span class="click-instruction">Kliko për të parë fotot <i class="fas fa-arrow-right"></i></span>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Modals -->
+    <!-- Modal 1 -->
+    <div id="modal1" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal('modal1')">&times;</span>
+            <div class="modal-body">
+                <img src="https://images.unsplash.com/photo-1523287562758-66c7fc58967f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                    alt="Fituesit e Matematikës">
+                <h4>Olimpiada Ndërkombëtare e Matematikës</h4>
+                <p>Me përkushtim të jashtëzakonshëm, nxënësit tanë arritën të mposhtin konkurrencën nga 50+ shtete.</p>
+                <span class="student-names">Fitues: Agon Gashi (Artë), Vesa Krasniqi (Argjendtë)</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal 2 -->
+    <div id="modal2" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal('modal2')">&times;</span>
+            <div class="modal-body">
+                <img src="https://images.unsplash.com/photo-1532094349884-543bc11b234d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                    alt="Fituesit e Eurekës">
+                <h4>Gara Shkencore Eureka</h4>
+                <p>Projekti i tyre mbi energjinë e rinovueshme i mahniti anëtarët e jurisë ndërkombëtare.</p>
+                <span class="student-names">Fitues: Ekipi "EcoFuture" (Drin, Era dhe Jon)</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal 3 -->
+    <div id="modal3" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal('modal3')">&times;</span>
+            <div class="modal-body">
+                <img src="https://images.unsplash.com/photo-1577896851231-70ef18881754?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                    alt="Kampionët e Debatit">
+                <h4>Kampionati Kombëtar i Debatit</h4>
+                <p>Pas shumë debateve sfiduese, ekipi ynë tregoi aftësi të shkëlqyera në argumentim dhe mendim kritik.
+                </p>
+                <span class="student-names">Fitues: Klubi i Debatit "Hasan Nahi"</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal 4 -->
+    <div id="modal4" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal('modal4')">&times;</span>
+            <div class="modal-body">
+                <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                    alt="Programuesit Fitues">
+                <h4>Gara e Programimit "CodeFest"</h4>
+                <p>Një aplikacion inovativ që synon të zgjidhë problemet e komunitetit i solli atyre vendin e parë.</p>
+                <span class="student-names">Fitues: Rrona dhe Leka</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-grid">
+            <div class="footer-about">
+                <a href="#" class="footer-logo">
+                    <img src="https://gjimnazi-hasannahi.com/wp-content/uploads/2024/03/cropped-0.-logo-300x300.png"
+                        alt="Logo">
+                    <span class="name">HASAN NAHI</span>
+                </a>
+                <p>Edukojmë liderët e së ardhmes me përkushtim dhe profesionalizëm. Gjimnazi Hasan Nahi është shtëpia e
+                    dijes tuaj.</p>
+                <div class="social" style="margin-top: 20px;">
+                    <a href="https://www.facebook.com/HasanNahiOfficial/" target="_blank"
+                        style="background: rgba(255,255,255,0.1); width: 40px; height: 40px; display: inline-flex; align-items: center; justify-content: center; border-radius: 50%;"><i
+                            class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/gjimnazihasannahi/" target="_blank"
+                        style="background: rgba(255,255,255,0.1); width: 40px; height: 40px; display: inline-flex; align-items: center; justify-content: center; border-radius: 50%; margin-left: 10px;"><i
+                            class="fab fa-instagram"></i></a>
+                    <a href="https://www.youtube.com/@hasannahihighschool1784" target="_blank"
+                        style="background: rgba(255,255,255,0.1); width: 40px; height: 40px; display: inline-flex; align-items: center; justify-content: center; border-radius: 50%; margin-left: 10px;"><i
+                            class="fab fa-youtube"></i></a>
+                    <a href="https://www.tiktok.com/@hasan.nahi.high.s" target="_blank"
+                        style="background: rgba(255,255,255,0.1); width: 40px; height: 40px; display: inline-flex; align-items: center; justify-content: center; border-radius: 50%; margin-left: 10px;"><i
+                            class="fab fa-tiktok"></i></a>
+                </div>
+            </div>
+            <div class="footer-nav">
+                <h3 class="footer-title">Lidhje të Shpejta</h3>
+                <ul class="footer-links">
+                    <li><a href="index.html">Ballina</a></li>
+                    <li><a href="about.html">Rreth Nesh</a></li>
+                    <li><a href="courses.html">Programet</a></li>
+                    <li><a href="achievements.html">Arritjet</a></li>
+                    <li><a href="revista.html">Revista HANA</a></li>
+                    <li><a href="eureka.html">Eureka 2025</a></li>
+                    <li><a href="education.html">Character Education</a></li>
+                    <li><a href="contact.html">Kontakti</a></li>
+                </ul>
+            </div>
+            <div class="footer-nav">
+                <h3 class="footer-title">Programet tona</h3>
+                <ul class="footer-links">
+                    <li><a href="#">Shkencat Natyrore</a></li>
+                    <li><a href="#">Shkencat Shoqërore</a></li>
+                    <li><a href="#">IT dhe Robotikë</a></li>
+                    <li><a href="#">Garat Shkencore</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h3 class="footer-title">Na Kontaktoni</h3>
+                <p><i class="fas fa-map-marker-alt"></i> Banullë, Lipjan, 14000, Kosovë</p>
+                <p><i class="fas fa-phone"></i> +383 48 177 770</p>
+                <p><i class="fas fa-envelope"></i> gjimnazihasannahi@gmail.com</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Gjimnazi "Hasan Nahi". Të gjitha të drejtat të rezervuara.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://unpkg.com/lenis@1.0.45/dist/lenis.min.js"></script>
+    <script src="js/main.js"></script>
+
+    <script>
+        // Modal logic
+        function openModal(id) {
+            document.getElementById(id).style.display = 'block';
+            setTimeout(() => {
+                document.getElementById(id).classList.add('show');
+            }, 10);
+            // Disable body scrolling
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal(id) {
+            document.getElementById(id).classList.remove('show');
+            setTimeout(() => {
+                document.getElementById(id).style.display = 'none';
+            }, 300);
+            // Re-enable body scrolling
+            document.body.style.overflow = '';
+        }
+
+        // Close modal when clicking outside of it
+        window.onclick = function (event) {
+            if (event.target.classList.contains('modal')) {
+                closeModal(event.target.id);
+            }
+        }
+    </script>
+</body>
+
+</html>
