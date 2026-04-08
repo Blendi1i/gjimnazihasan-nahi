@@ -35,6 +35,12 @@ h1, h2, h3, h4, .logo-text .name {
     padding: 0 1.5rem;
 }
 
+@media (max-width: 576px) {
+    .container {
+        padding: 0 1rem;
+    }
+}
+
 /* =========================================
    Preloader
    ========================================= */
@@ -385,10 +391,18 @@ h1, h2, h3, h4, .logo-text .name {
 }
 
 h1 {
-    font-size: 3.5rem;
-    line-height: 1.2;
+    font-size: clamp(2.25rem, 5vw + 1rem, 3.5rem);
+    line-height: 1.1;
     margin-bottom: 25px;
     color: var(--primary-dark);
+}
+
+h2 {
+    font-size: clamp(1.75rem, 3vw + 1rem, 2.5rem);
+}
+
+h3 {
+    font-size: clamp(1.25rem, 2vw + 1rem, 1.75rem);
 }
 
 h1 .accent {
@@ -581,6 +595,7 @@ h1 .accent {
 .feature-item i {
     font-size: 1.5rem;
     color: var(--primary);
+    flex-shrink: 0;
 }
 
 .feature-item h4 {
@@ -911,7 +926,7 @@ footer {
 }
 
 .hero-modern-content h1 {
-    font-size: 3.5rem;
+    font-size: clamp(2rem, 6vw + 1rem, 3.5rem);
     color: var(--white);
     margin-bottom: 20px;
     line-height: 1.1;
@@ -1188,9 +1203,10 @@ section.container, div.container {
         position: absolute;
         top: 100%;
         left: 0;
-        padding: 20px;
-        box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+        padding: 30px 20px;
+        box-shadow: 0 15px 30px rgba(0,0,0,0.1);
         text-align: center;
+        z-index: 1000;
     }
     
     .nav-links.active {
@@ -1198,42 +1214,72 @@ section.container, div.container {
     }
 
     .btn-enroll {
-        display: none; /* Hide standard enroll button on mobile nav if space is tight */
+        display: none; 
     }
     
     .nav-links.active + .btn-enroll, .nav-links.active ~ .btn-enroll {
         display: block;
-        margin: 10px auto;
-        width: max-content;
+        margin: 20px auto 10px;
+        width: 80%;
     }
     
     /* Hero */
+    .hero {
+        padding: 60px 0 80px;
+    }
     .hero-grid, .about-grid {
         grid-template-columns: 1fr;
         text-align: center;
-        gap: 40px;
-    }
-    .hero-content h1 {
-        font-size: 2.8rem;
+        gap: 50px;
     }
     .hero-btns {
         justify-content: center;
+        flex-wrap: wrap;
+    }
+    .image-stack {
+        margin-top: 0;
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
     }
     .hero-visual .floating-box {
-        bottom: 10px;
-        right: 10px;
-        padding: 15px;
+        bottom: -20px;
+        right: 0;
+        padding: 20px;
+        width: 90%;
+        margin: 0 auto;
+        left: 5%;
+        justify-content: center;
     }
-    .floating-box i { font-size: 2rem; }
     
+    /* Grids */
+    .bento-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .bento-card.large {
+        grid-column: span 2;
+    }
+    
+    /* About */
+    .about-features {
+        gap: 20px;
+        padding: 0 10px;
+    }
+    .feature-item {
+        text-align: left;
+        background: rgba(0, 74, 173, 0.03);
+        padding: 20px;
+        border-radius: 12px;
+    }
+
     /* Footer */
     .footer-grid {
         grid-template-columns: 1fr 1fr;
-        gap: 30px;
+        gap: 40px;
     }
 }
 
-/* Phones (Max-width: 768px) */
+/* Tablets / Large Phones (Max-width: 768px) */
 @media (max-width: 768px) {
     /* Top Bar */
     .top-bar .bar-wrap {
@@ -1241,37 +1287,74 @@ section.container, div.container {
         gap: 10px;
         text-align: center;
     }
-    .info span { margin-right: 10px; }
+    .info span { margin-right: 15px; }
     
     /* Navigation */
-    .logo img { height: 45px; }
-    .logo-text .name { font-size: 1.2rem; }
-    .logo-text .sub { font-size: 0.65rem; }
+    .logo img { height: 50px; }
+    .logo-text .name { font-size: 1.3rem; }
     
     /* Hero */
-    .hero { padding: 80px 0; }
-    .hero-content h1 { font-size: 2.3rem; }
-    .stats-grid {
-        grid-template-columns: 1fr;
-        gap: 15px;
-    }
     .hero-btns {
         flex-direction: column;
-        gap: 10px;
+        align-items: center;
+    }
+    .btn-primary, .btn-outline {
+        width: 100%;
+        justify-content: center;
     }
     
-    /* General Settings */
-    .section-title h2 { font-size: 2rem; }
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+    
+    /* About */
+    .about {
+        padding: 60px 0;
+    }
     .about-features {
         grid-template-columns: 1fr;
     }
     
-    /* Footer */
+    /* Bento Grid */
+    .bento-grid {
+        grid-template-columns: 1fr;
+    }
+    .bento-card.large {
+        grid-column: span 1;
+    }
+}
+
+/* Small Phones (Max-width: 480px) */
+@media (max-width: 480px) {
+    .logo-text .name { font-size: 1.1rem; }
+    .logo-text .sub { font-size: 0.6rem; }
+    
+    .hero-content .tag {
+        font-size: 0.75rem;
+        padding: 6px 14px;
+    }
+    
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .section-title h2 {
+        padding-bottom: 15px;
+    }
+    
     .footer-grid {
         grid-template-columns: 1fr;
         text-align: center;
     }
-    .footer-about .footer-logo {
+    .footer-about .footer-logo, .footer-contact p {
         justify-content: center;
+    }
+    
+    footer {
+        padding: 60px 0 20px;
+    }
+    .footer-title {
+        margin-bottom: 20px;
     }
 }
